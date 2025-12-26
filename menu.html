@@ -2,176 +2,194 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>FoodieExpress | Menu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - FoodieExpress</title>
-    <link rel="stylesheet" href="styles.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+        }
+
+        nav {
+            background: #ff4d4d;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .cart-count {
+            background: black;
+            padding: 3px 8px;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .menu-item-info {
+            padding: 15px;
+        }
+
+        .menu-item-info h3 {
+            margin: 0 0 10px;
+        }
+
+        .menu-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .add-to-cart-btn {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #e63e3e;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <i class="fas fa-utensils"></i>
-                <span>FoodieExpress</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html" class="active">Menu</a></li>
-                <li><a href="cart.html">
-                    <i class="fas fa-shopping-cart"></i>
-                    Cart <span class="cart-count" id="cartCount">0</span>
-                </a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Menu Header -->
-    <section class="menu-header">
-        <div class="container">
-            <h1>Our Menu</h1>
-            <p>Explore our delicious selection of food</p>
-        </div>
-    </section>
+<!-- NAVBAR -->
+<nav>
+    <div>
+        <i class="fas fa-utensils"></i> FoodieExpress
+    </div>
+    <div>
+        <a href="#">Menu</a>
+        <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            Cart <span id="cartCount" class="cart-count">0</span>
+        </a>
+    </div>
+</nav>
 
-    <!-- Filters -->
-    <section class="menu-filters">
-        <div class="container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="pizza">Pizza</button>
-                <button class="filter-btn" data-category="burger">Burgers</button>
-                <button class="filter-btn" data-category="pasta">Pasta</button>
-                <button class="filter-btn" data-category="sushi">Sushi</button>
-                <button class="filter-btn" data-category="dessert">Desserts</button>
-                <button class="filter-btn" data-category="drinks">Drinks</button>
-            </div>
-            <div class="search-filter">
-                <input type="text" placeholder="Search dishes..." id="menuSearch">
-                <i class="fas fa-search"></i>
-            </div>
-        </div>
-    </section>
+<!-- MENU -->
+<div class="container">
+    <h2>Our Menu</h2>
 
-    <!-- Menu Items -->
-    <section class="menu-items">
-        <div class="container">
-            <div class="menu-grid" id="menuGrid">
-                <!-- Static Menu Items -->
-                <div class="menu-item">
-                    <div class="menu-item-image">
-                        <img src="images/French-Fries.png" alt="French Fries">
-                    </div>
-                    <div class="menu-item-info">
-                        <h3>French Fries</h3>
-                        <p>Crispy golden french fries.</p>
-                        <div class="menu-item-footer">
-                            <span class="menu-item-price">₹149</span>
-                            <button class="add-to-cart-btn">
-                                <i class="fas fa-plus"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
+    <div class="menu-grid">
 
-                <div class="menu-item">
-                    <div class="menu-item-image">
-                        <img src="images/coke.png" alt="Coke">
-                    </div>
-                    <div class="menu-item-info">
-                        <h3>Coke</h3>
-                        <p>Chilled refreshing cola drink.</p>
-                        <div class="menu-item-footer">
-                            <span class="menu-item-price">₹79</span>
-                            <button class="add-to-cart-btn">
-                                <i class="fas fa-plus"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-image">
-                        <img src="images/pizza.png" alt="Pizza">
-                    </div>
-                    <div class="menu-item-info">
-                        <h3>Pizza</h3>
-                        <p>Cheesy delicious pizza slice.</p>
-                        <div class="menu-item-footer">
-                            <span class="menu-item-price">₹299</span>
-                            <button class="add-to-cart-btn">
-                                <i class="fas fa-plus"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-item-image">
-                        <img src="images/burger.png" alt="Burger">
-                    </div>
-                    <div class="menu-item-info">
-                        <h3>Burger</h3>
-                        <p>Juicy burger with fresh veggies.</p>
-                        <div class="menu-item-footer">
-                            <span class="menu-item-price">₹199</span>
-                            <button class="add-to-cart-btn">
-                                <i class="fas fa-plus"></i> Add
-                            </button>
-                        </div>
-                    </div>
+        <div class="menu-item">
+            <img src="images/French-Fries.png">
+            <div class="menu-item-info">
+                <h3>French Fries</h3>
+                <p>Crispy golden fries</p>
+                <div class="menu-item-footer">
+                    <span>₹149</span>
+                    <button class="add-to-cart-btn">Add</button>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>FoodieExpress</h3>
-                    <p>Your favorite food, delivered fast.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
+        <div class="menu-item">
+            <img src="images/coke.png">
+            <div class="menu-item-info">
+                <h3>Coke</h3>
+                <p>Chilled soft drink</p>
+                <div class="menu-item-footer">
+                    <span>₹79</span>
+                    <button class="add-to-cart-btn">Add</button>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
-                    <p><i class="fas fa-envelope"></i> support@foodieexpress.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 FoodieExpress. All rights reserved.</p>
             </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="menu-item">
+            <img src="images/pizza.png">
+            <div class="menu-item-info">
+                <h3>Pizza</h3>
+                <p>Cheesy pizza slice</p>
+                <div class="menu-item-footer">
+                    <span>₹299</span>
+                    <button class="add-to-cart-btn">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/burger.png">
+            <div class="menu-item-info">
+                <h3>Burger</h3>
+                <p>Juicy veg burger</p>
+                <div class="menu-item-footer">
+                    <span>₹199</span>
+                    <button class="add-to-cart-btn">Add</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+    const cartCount = document.getElementById("cartCount")
+    cartCount.innerText = cart.length
+
+    const buttons = document.querySelectorAll(".add-to-cart-btn")
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const item = button.closest(".menu-item")
+
+            const product = {
+                name: item.querySelector("h3").innerText,
+                price: item.querySelector("span").innerText,
+                image: item.querySelector("img").src,
+                quantity: 1
+            }
+
+            cart.push(product)
+            localStorage.setItem("cart", JSON.stringify(cart))
+
+            cartCount.innerText = cart.length
+            alert(product.name + " added to cart")
+        })
+    })
+</script>
+
 </body>
 </html>
-
