@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodieExpress - Order Food Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-utensils"></i>
+                <span>FoodieExpress</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="cart.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    Cart <span class="cart-count" id="cartCount">0</span>
+                </a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Delicious Food Delivered to Your Door</h1>
+            <p>Order from your favorite restaurants and get it delivered fast</p>
+            <div class="search-box">
+                <input type="text" placeholder="Search for food, restaurants..." id="searchInput">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <a href="menu.html" class="btn btn-primary">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-card">
+                <i class="fas fa-clock"></i>
+                <h3>Quick Delivery</h3>
+                <p>Get your food delivered in 30 minutes or less</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Safe & Secure</h3>
+                <p>Secure payment and contactless delivery</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-star"></i>
+                <h3>Top Rated</h3>
+                <p>Only the best restaurants in town</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Best Prices</h3>
+                <p>Great deals and discounts available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Restaurants -->
+    <section class="popular-restaurants">
+        <div class="container">
+            <h2 class="section-title">Popular Restaurants</h2>
+            <div class="restaurant-grid" id="restaurantGrid">
+                <!-- Static Restaurants -->
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="images/Burger_King_2020.svg.png" alt="Burger King logo">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Burger King</h3>
+                        <p>American • 20-25 min</p>
+                        <div class="restaurant-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="images/images.png" alt="McDonald's logo">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>McDonald's</h3>
+                        <p>American • 15-20 min</p>
+                        <div class="restaurant-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="restaurant-card">
+                    <div class="restaurant-image">
+                        <img src="images/Dominos_pizza_logo.svg.png" alt="Domino's logo">
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Domino's</h3>
+                        <p>Pizza • 25-30 min</p>
+                        <div class="restaurant-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Dishes -->
+    <section class="popular-dishes">
+        <div class="container">
+            <h2 class="section-title">Popular Dishes</h2>
+            <div class="dish-grid" id="dishGrid">
+                <!-- Static Dishes -->
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="images/French-Fries.png" alt="French Fries">
+                    </div>
+                    <div class="dish-info">
+                        <h3>French Fries</h3>
+                        <p>Crispy golden french fries.</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">₹149</span>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="images/coke.png" alt="Coke">
+                    </div>
+                    <div class="dish-info">
+                        <h3>Coke</h3>
+                        <p>Chilled refreshing cola drink.</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">₹79</span>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="images/pizza.png" alt="Pizza">
+                    </div>
+                    <div class="dish-info">
+                        <h3>Pizza</h3>
+                        <p>Cheesy delicious pizza slice.</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">₹299</span>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="images/burger.png" alt="Burger">
+                    </div>
+                    <div class="dish-info">
+                        <h3>Burger</h3>
+                        <p>Juicy burger with fresh veggies.</p>
+                        <div class="dish-footer">
+                            <span class="dish-price">₹199</span>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FoodieExpress</h3>
+                    <p>Your favorite food, delivered fast.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> support@foodieexpress.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FoodieExpress. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
